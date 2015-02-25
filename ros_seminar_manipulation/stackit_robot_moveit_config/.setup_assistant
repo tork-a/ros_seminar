@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: stackit_robot_description
+    relative_path: urdf/my_four_dof_arm.xacro
+  SRDF:
+    relative_path: config/stackit_robot.srdf
+  CONFIG:
+    generated_timestamp: 1421988497

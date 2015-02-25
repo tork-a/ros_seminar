@@ -1,0 +1,13 @@
+temp_controller:
+  controller:
+    package: dynamixel_controllers
+    module: joint_position_controller
+    type: JointPositionController
+  joint_name: temp_joint
+  joint_speed: 1.57
+  motor:
+    id: 1
+    init: 512
+    min: 0
+    max: 1023
+

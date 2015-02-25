@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<robot name="stackit_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find stackit_robot_description)/urdf/arm_hardware.xacro" />
+
+  <material name="white">
+    <color rgba="0.87 0.90 0.87 1.0"/>
+  </material>
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.22 0.32 0.14 1.0"/>
+  </material>
+
+  <link name="base_link"/>
+  <link name="arm_base_link">
+    <visual>
+      <geometry>
+        <box size ="0.5 0.5 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+  <joint name="arm_base_joint" type="fixed">
+    <origin xyz="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="arm_base_link"/>
+  </joint>
+
+  <!-- shoulder pan joint -->
+  <dynamixel_AX12_fixed parent="arm_base_link" name="base_pan_servo">
+    <origin xyz="0 0 ${AX12_WIDTH/2}" rpy="0 0 ${-M_PI/2}"/>
+  </dynamixel_AX12_fixed>
+  <bioloid_F3_revolute parent="base_pan_servo_link" name="base_pan" color="white" vlimit="1.571"  llimit="-1.571" ulimit="1.571">
+    <origin xyz="0 0 ${AX12_WIDTH/2+0.002}" rpy="${M_PI/2} 0 ${M_PI/2}" />
+  </bioloid_F3_revolute>
+
+  <!-- shoulder lift joint -->
+  <dynamixel_AX12_fixed parent="base_pan_link" name="base_lift_servo">
+    <origin xyz="0 ${AX12_HEIGHT+F3_HEIGHT} 0" rpy="0 ${M_PI} 0" />
+  </dynamixel_AX12_fixed>
+  <bioloid_F4_revolute parent="base_lift_servo_link" name="base_lift" color="white" vlimit="1.571" llimit="-2.617" ulimit="2.617">
+    <origin xyz="0 0 0" rpy="${-M_PI/2} ${-M_PI/2} 0" />
+  </bioloid_F4_revolute>
+
+  <bioloid_F3_fixed parent="base_lift_link" name="arm_shoulder_F3_0" color="white">
+    <origin xyz="0 0 ${F4_HEIGHT}" rpy="${M_PI/2} 0 ${-M_PI/2}" />
+  </bioloid_F3_fixed>
+
+  <!-- elbow joint -->
+  <dynamixel_AX12_fixed parent="arm_shoulder_F3_0_link" name="elbow_flex_servo">
+    <origin xyz="0 ${AX12_HEIGHT+F3_HEIGHT} 0" rpy="0 ${M_PI} 0" />
+  </dynamixel_AX12_fixed>
+  <bioloid_F4_revolute parent="elbow_flex_servo_link" name="elbow_flex" color="white" vlimit="1.571" llimit="0.0" ulimit="2.617">
+    <origin xyz="0 0 0" rpy="${-M_PI/2} ${-M_PI/2} 0" />
+  </bioloid_F4_revolute>
+
+  <bioloid_F3_fixed parent="elbow_flex_link" name="elbow_F3_0" color="white">
+    <origin xyz="0 0 ${F4_HEIGHT}" rpy="${M_PI/2} 0 ${-M_PI/2}" />
+  </bioloid_F3_fixed>
+  
+  <!-- wrist joint -->
+  <dynamixel_AX12_fixed parent="elbow_F3_0_link" name="wrist_flex_servo">
+    <origin xyz="0 ${AX12_HEIGHT+F3_HEIGHT} 0" rpy="0 ${M_PI} 0" />
+  </dynamixel_AX12_fixed>
+  <bioloid_F2_revolute parent="wrist_flex_servo_link" name="wrist_flex" color="white" vlimit="1.571" llimit="-1.745" ulimit="1.745">
+    <origin xyz="0 0 0" rpy="${-M_PI/2} ${-M_PI/2} 0" />
+  </bioloid_F2_revolute>
+  
+  <bioloid_F2_fixed parent="wrist_flex_link" name="wrist_F2_0" color="white">
+    <origin xyz="0 0 ${F2_HEIGHT*2}" rpy="0 ${M_PI} ${M_PI/2}" />
+  </bioloid_F2_fixed>
+  
+  <!-- dummy joint -->
+  <link name="dummy_a_link" />
+  <joint name="dummy_a_joint" type="revolute">
+    <parent link="wrist_F2_0_link"/>
+    <child link="dummy_a_link"/>
+    <origin xyz="0.0225 0 0" rpy="${M_PI} 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="30" lower="-1.571" upper="1.571" velocity="1.571"/>
+  </joint>
+  
+  <link name="dummy_b_link" >
+    <visual>
+      <geometry>
+        <box size ="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+  <joint name="dummy_b_joint" type="fixed">
+    <parent link="dummy_a_link"/>
+    <child link="dummy_b_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 0" />
+  </joint>
+  
+</robot>
+

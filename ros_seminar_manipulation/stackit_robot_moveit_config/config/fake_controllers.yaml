@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_whole_arm_controller
+    joints:
+      - base_pan_joint
+      - base_lift_joint
+      - elbow_flex_joint
+      - wrist_flex_joint
+      - dummy_a_joint
+  - name: fake_arm_tip_controller
+    joints:
+      []

@@ -1,0 +1,1 @@
+rosrun moveit_ikfast create_ikfast_moveit_plugin.py stackit_robot whole_arm stackit_robot_ikfast_whole_arm_plugin /home/n130s/data/Dropbox/ROS/hydro_precise/cws_baxter/src/tork-a/baxter_seminar/ros_seminar/ros_seminar_manipulation/stackit_robot_ikfast_whole_arm_plugin/src/stackit_robot_whole_arm_ikfast_solver.cpp

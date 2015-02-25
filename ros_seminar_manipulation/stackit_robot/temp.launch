@@ -1,0 +1,9 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find stackit_robot_description)/urdf/my_four_dof_arm.xacro'" />
+  <param name="use_gui" value="True"/>
+ <node name="stackit_robot_joint_states_publisher" pkg="stackit_robot" type="stackit_robot_joint_state_publisher.py" output="screen"></node>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="publish_frequency" type="double" value="20.0" />
+  </node>
+</launch>
+
