@@ -1,0 +1,28 @@
+
+joint_limits:
+  base_pan_joint:
+    has_velocity_limits: true
+    max_velocity: 1.571
+    has_acceleration_limits: true
+    max_acceleration: 1.571
+  wrist_flex_joint:
+    has_velocity_limits: true
+    max_velocity: 1.571
+    has_acceleration_limits: true
+    max_acceleration: 1.571
+  base_lift_joint:
+    has_velocity_limits: true
+    max_velocity: 1.571
+    has_acceleration_limits: true
+    max_acceleration: 1.571
+  elbow_flex_joint:
+    has_velocity_limits: true
+    max_velocity: 1.571
+    has_acceleration_limits: true
+    max_acceleration: 1.571
+  dummy_a_joint:
+    has_velocity_limits: true
+    max_velocity: 1.571
+    has_acceleration_limits: true
+    max_acceleration: 1.571
+

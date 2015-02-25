@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<robot>
+  <property name="M_PI" value="3.14159"/>
+  <property name="M_SCALE" value="0.001"/>
+  <property name="F2_HEIGHT" value="0.026"/>
+  <property name="F3_HEIGHT" value="0.003"/>
+  <property name="F4_HEIGHT" value="0.052"/>
+  <property name="AX12_HEIGHT" value="0.0385"/>
+  <property name="AX12_WIDTH" value="0.038"/>
+
+  <macro name="bioloid_F2_fixed" params="parent name color *origin">
+    <joint name="${name}_joint" type="fixed">
+      <insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz=" 0 0 0 " rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://stackit_robot_description/meshes/FP04-F2.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.00775" rpy="0 0 0" />
+        <geometry>
+          <box size="0.0485 0.025 0.0375"/>
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+  
+  <macro name="bioloid_F3_fixed" params="parent name color *origin">
+    <joint name="${name}_joint" type="fixed">
+      <insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz=" 0 0 0 " rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://stackit_robot_description/meshes/FP04-F3.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0045 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.025 0.009 0.0382"/>
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+  <macro name="dynamixel_AX12_fixed" params="parent name *origin">
+    <joint name="${name}_joint" type="fixed">
+      <insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz=" 0 0 0 " rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://stackit_robot_description/meshes/AX-12A.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 -0.0135 0.0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.032 0.05 0.038"/>
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+  <macro name="bioloid_F3_revolute" params="parent name color llimit ulimit vlimit *origin">
+    <joint name="${name}_joint" type="revolute">
+      <insert_block name="origin" />
+      <axis xyz="0 1 0"/>
+      <limit effort="30" velocity="${vlimit}" lower="${llimit}" upper="${ulimit}" />
+      <parent link="${parent}"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz=" 0 0 0 " rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://stackit_robot_description/meshes/FP04-F3.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0045 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.025 0.009 0.0382"/>
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+  <macro name="bioloid_F2_revolute" params="parent name color llimit ulimit vlimit *origin">
+    <joint name="${name}_joint" type="revolute">
+      <insert_block name="origin" />
+      <axis xyz="1 0 0"/>
+      <limit effort="30" velocity="${vlimit}" lower="${llimit}" upper="${ulimit}" />
+      <parent link="${parent}"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz=" 0 0 0 " rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://stackit_robot_description/meshes/FP04-F2.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.00775" rpy="0 0 0" />
+        <geometry>
+          <box size="0.0485 0.025 0.0375"/>
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+  <macro name="bioloid_F4_revolute" params="parent name color llimit ulimit vlimit *origin">
+    <joint name="${name}_joint" type="revolute">
+      <insert_block name="origin" />
+      <axis xyz="1 0 0"/>
+      <limit effort="30" velocity="${vlimit}" lower="${llimit}" upper="${ulimit}" />
+      <parent link="${parent}"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz=" 0 0 0 " rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://stackit_robot_description/meshes/FP04-F4.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0205" rpy="0 0 0" />
+        <geometry>
+          <box size="0.048 0.029 0.063"/>
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+</robot>
+

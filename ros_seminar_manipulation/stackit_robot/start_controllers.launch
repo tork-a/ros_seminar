@@ -1,0 +1,23 @@
+<launch>
+    <rosparam file="$(find stackit_robot)/dynamixel_parms.yaml" command="load"/>
+    <node name="dynamixel_controller_spawner_ax12" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port dynamixel_ax12
+                base_pan_controller
+                base_lift_controller
+                elbow_flex_controller
+                wrist_flex_controller"
+          output="screen"/>
+
+    <node name="trajectory_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --type=meta
+                stackit_robot_controller
+                base_pan_controller
+                base_lift_controller
+                elbow_flex_controller
+                wrist_flex_controller"
+          output="screen"/>
+
+</launch>
+
