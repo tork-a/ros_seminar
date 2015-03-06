@@ -11,7 +11,7 @@ base_pan_controller:
         min: 0
         max: 1023
 
-base_lift_controller:dynamixel_parms.yaml
+base_lift_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
