@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find stackit_robot)/dynamixel_moveit.launch" />
+  <include file="$(find stackit_robot)/marker_all_app.launch" />
+  <node name="stackit_demo" pkg="stackit_robot" type="marker_demo.py" output="screen" />
+</launch>
