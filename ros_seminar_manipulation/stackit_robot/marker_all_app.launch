@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find stackit_robot)/marker_detect.launch" />
+
+  <node name="tf_listener" pkg="stackit_robot" type="tf_listener.py" output="screen" />
+
+  <node name="image_view_node" pkg="image_view" type="image_view" output="screen" args="image:=/camera/image_raw" />
+
+</launch>
