@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
  
 import rospy
@@ -19,4 +18,3 @@ def send_command():
    
 if __name__ == '__main__':
     send_command()
-
