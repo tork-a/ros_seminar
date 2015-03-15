@@ -1,4 +1,29 @@
 #!/usr/bin/env python
+
+"""
+    stackit_robot_joint_state_publisher.py - Version 1.0 2010-12-28
+    
+    Publish the dynamixel_controller joint states on the /joint_states topic
+    
+    Created for the Pi Robot Project: http://www.pirobot.org
+    Copyright (c) 2010 Patrick Goebel.  All rights reserved.
+
+    Created for TORK: http://opensource-robotics.tokyo.jp/
+    Copyright (c) 2014 Wataru Yasuda.  All rights reserved.
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details at:
+    
+    http://www.gnu.org/licenses/gpl.html
+"""
+
 import rospy
 from sensor_msgs.msg import JointState as JointStateSensor
 from dynamixel_msgs.msg import JointState as JointStateDynamixel

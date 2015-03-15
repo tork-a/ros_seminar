@@ -1,9 +1,0 @@
-<launch>
-  <!-- Start controllers -->
-  <rosparam file="$(find my_onedof_control)/dynamixel_parms.yaml" command="load"/>
-    <node name="dynamixel_controller_spawner_ax12" pkg="dynamixel_controllers" type="controller_spawner.py"
-      args="--manager=dxl_manager
-        --port dynamixel_ax12
-        temp_controller"
-      output="screen"/>
-</launch>
