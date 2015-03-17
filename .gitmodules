@@ -1,0 +1,3 @@
+[submodule "rosseminar_hironxo/rtmros_tutorials"]
+	path = rosseminar_hironxo/rtmros_tutorials
+	url = https://github.com/start-jsk/rtmros_tutorials.git
