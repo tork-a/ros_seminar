@@ -1,0 +1,4 @@
+- git: 
+    local-name: ros_seminar
+    uri: https://github.com/tork-a/ros_seminar.git
+    version: master
