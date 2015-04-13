@@ -10,7 +10,6 @@
 
 ## Setup
 
-
 ```
 sudo apt-get install git
 source /opt/ros/hydro/setup.bash
@@ -22,3 +21,10 @@ rosdep install --from-paths src --ignore-src -r  -y
 catkin_make
 source devel/setup.bash
 ```
+
+## Prerequisite material
+
+Not strongly enforced though, it is nice of you to preview the following materials prior to taking a lecture:
+
+- [ROS tf tutorial](http://wiki.ros.org/tf/Tutorials#Learning_tf). "Learning tf --> Python" section.
+- [ROS URDF tutorials](http://wiki.ros.org/urdf/Tutorials)
