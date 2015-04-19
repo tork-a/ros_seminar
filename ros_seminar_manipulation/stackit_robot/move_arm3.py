@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#coding:utf-8
+
 # Software License Agreement (BSD License)
 #
 # Copyright (c) 2014, Tokyo Opensource Robotics Kyokai Association
@@ -34,8 +36,6 @@
 # Author: Wataru Yasuda
 
 
-#!/usr/bin/env python
-#coding:utf-8
 
 from moveit_commander import MoveGroupCommander
 from geometry_msgs.msg import Pose, Point, Quaternion
@@ -67,6 +67,7 @@ if __name__ == '__main__':
     target_pose = Pose(Point(*target_position), target_orientation)
     group.set_pose_target(target_pose)
     # 姿勢への移動指示を実行
+    set_slope(64)
     group.go()
     
     time.sleep(1)
