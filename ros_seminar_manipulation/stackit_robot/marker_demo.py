@@ -92,7 +92,7 @@ def arm_demo():
             else:
                 cnt = 0
                 trans_stack = numpy.zeros((10,6))
-                print("retry.") 
+                print("retry detection; markers offset is too large.") 
         rate.sleep()
     
     print("averaged trans")
