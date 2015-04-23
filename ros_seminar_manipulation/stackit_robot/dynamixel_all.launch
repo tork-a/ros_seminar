@@ -1,6 +1,10 @@
 <launch>
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+
   <include file="$(find stackit_robot)/controller_manager.launch" />
   <include file="$(find stackit_robot)/start_controllers.launch" />
   <include file="$(find stackit_robot)/temp.launch" />
-<!--  <node name="rviz_stackit" pkg="rviz" type="rviz" /> -->
+  <node name="rviz_stackit" pkg="rviz" type="rviz" launch-prefix="$(arg launch_prefix)" /> -->
 </launch>
