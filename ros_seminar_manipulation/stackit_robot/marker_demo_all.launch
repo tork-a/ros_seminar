@@ -1,9 +1,5 @@
 <launch>
-    <arg name="usb_port" default="/dev/ttyUSB0" />
-    
-    <include file="$(find stackit_robot)/controller_manager.launch">
-      <arg name="usb_port" value="$(arg usb_port)" />
-    </include>
+    <include file="$(find stackit_robot)/controller_manager.launch"/>
     <include file="$(find stackit_robot)/start_controllers.launch"/>
     <node name="stackit_robot_joint_state_publisher" pkg="stackit_robot" type="stackit_robot_joint_state_publisher.py" output="screen"/>
     <include file="$(find stackit_robot_moveit_config)/launch/move_group.launch"/>
