@@ -1,8 +1,8 @@
-# ros_seminar
+# ros_workshop
 
-Packages for ROS seminars held by TORK
+Packages for ROS workshops/seminars held by TORK
 
-# Setups common for all seminars
+# Setups common for all workshops
 
 ## Intended Environment
 
@@ -12,7 +12,7 @@ Packages for ROS seminars held by TORK
  - You can check by `sudo lshw | grep -i cpu` (ref. [this QA thread](http://askubuntu.com/a/26397/24203))
 - 5GB free disk space
 - 1 or more USB ports
-- When attending a seminar outside your organization, be sure to disable intra-network setting (e.g. web proxy).
+- When attending a workshop outside your organization, be sure to disable intra-network setting (e.g. web proxy).
 
 ## Setup
 
@@ -20,7 +20,7 @@ Packages for ROS seminars held by TORK
 
 - Install ROS Hydro by following the installation tutorial [Japanese](http://wiki.ros.org/ja/hydro/Installation/Ubuntu) : [English](http://wiki.ros.org/hydro/Installation/Ubuntu)
 
-### Seminar content
+### Workshop content
 ```
 sudo apt-get install git
 source /opt/ros/hydro/setup.bash

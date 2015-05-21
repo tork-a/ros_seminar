@@ -1,6 +1,6 @@
-#ROS Seminar Basic
+#ROS Workshop Basic
 
-[Seminar general info](http://opensource-robotics.tokyo.jp/?page_id=660)
+[Workshop general info](http://opensource-robotics.tokyo.jp/?page_id=660)
 
 ## Intended Environment
 
