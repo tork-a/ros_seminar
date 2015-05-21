@@ -1,6 +1,6 @@
-#ROS Seminar Intermediate - Manipulation
+#ROS Workshop Intermediate - Manipulation
 
-[Seminar general info](http://opensource-robotics.tokyo.jp/?page_id=666)
+[Workshop general info](http://opensource-robotics.tokyo.jp/?page_id=666)
 
 ## Intended Environment
 
