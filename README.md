@@ -6,7 +6,7 @@ Packages for ROS workshops/seminars held by TORK
 
 ## Intended Environment
 
-- Ubuntu 12.04 64bit
+- Ubuntu 14.04 (Trusty Tahr) 64bit
 - No virtual machine (it MIGHT work but cannot be guaranteed)
 - Intel i5 4th generation or higher
  - You can check by `sudo lshw | grep -i cpu` (ref. [this QA thread](http://askubuntu.com/a/26397/24203))
@@ -18,12 +18,12 @@ Packages for ROS workshops/seminars held by TORK
 
 ### System prerequisite 
 
-- Install ROS Hydro by following the installation tutorial [Japanese](http://wiki.ros.org/ja/hydro/Installation/Ubuntu) : [English](http://wiki.ros.org/hydro/Installation/Ubuntu)
+- Install ROS Indigo by following the installation tutorial [Japanese](http://wiki.ros.org/ja/indigo/Installation/Ubuntu) : [English](http://wiki.ros.org/indigo/Installation/Ubuntu)
 
 ### Workshop content
 ```
 sudo apt-get install git
-source /opt/ros/hydro/setup.bash
+source /opt/ros/indigo/setup.bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src && catkin_init_workspace
 git clone https://github.com/tork-a/ros_seminar.git
