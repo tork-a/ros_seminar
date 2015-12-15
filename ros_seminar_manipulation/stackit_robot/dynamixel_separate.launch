@@ -1,0 +1,15 @@
+<launch>
+  <!-- This file was created based on the discussion at https://github.com/tork-a/delivery/issues/325#issuecomment-164825118. 
+       Basically you should use dynamixel_all.launch to run all the necessary nodes. Only when something seems not properly running with dynamixel_all.launch, 
+       run this launch together with start_controllers.launch. -->
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+  <arg name="use_viz" default="true" />
+
+  <include file="$(find stackit_robot)/controller_manager.launch" />
+  <include file="$(find stackit_robot)/temp.launch" />
+  <group if="$(arg use_viz)">
+    <node name="rviz_stackit" pkg="rviz" type="rviz" launch-prefix="$(arg launch_prefix)" />
+  </group>
+</launch>
