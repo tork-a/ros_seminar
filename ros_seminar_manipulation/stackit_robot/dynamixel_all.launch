@@ -2,10 +2,13 @@
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+  <arg name="use_viz" default="true" />
 
   <include file="$(find stackit_robot)/controller_manager.launch" />
   <!-- 12/6/2015 Disable due to the reported errors. See https://github.com/tork-a/delivery/issues/325#issuecomment-162515572 -->
   <!-- <include file="$(find stackit_robot)/start_controllers.launch" /> -->
   <include file="$(find stackit_robot)/temp.launch" />
-  <node name="rviz_stackit" pkg="rviz" type="rviz" launch-prefix="$(arg launch_prefix)" /> -->
+  <group if="$(arg use_viz)">
+    <node name="rviz_stackit" pkg="rviz" type="rviz" launch-prefix="$(arg launch_prefix)" />
+  </group>
 </launch>

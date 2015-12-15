@@ -1,7 +1,9 @@
 <launch>
   <arg name="debug" default="false" />
   
-  <include file="$(find stackit_robot)/dynamixel_all.launch" />
+  <include file="$(find stackit_robot)/dynamixel_all.launch">
+    <arg name="use_viz" value="false" />
+  </include>
 
   <include file="$(find stackit_robot_moveit_config)/launch/move_group.launch" />
   <include file="$(find stackit_robot_moveit_config)/launch/moveit_rviz.launch">
