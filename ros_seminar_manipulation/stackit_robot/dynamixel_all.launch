@@ -3,8 +3,8 @@
   <arg name="use_viz" default="true" />
 
   <include file="$(find stackit_robot)/dynamixel_separate.launch">
-    <arg name="debug" value="false" />
-    <arg name="use_viz" value="true" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="use_viz" value="$(arg use_viz)" />
   </include>
 
   <include file="$(find stackit_robot)/start_controllers.launch" />
