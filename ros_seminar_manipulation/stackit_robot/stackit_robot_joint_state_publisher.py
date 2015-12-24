@@ -44,7 +44,7 @@ class Main():
         for controller in controllers:
             joint = rospy.get_param( controller + '/joint_name', '')
             
-            self.joint_states[joint] = self.JointStateMessage(controller, 0.0, 0.0, 0.0)
+            self.joint_states[joint] = self.JointStateMessage(joint, 0.0, 0.0, 0.0)
             rospy.Subscriber( controller + '/state', JointStateDynamixel, self.controller_state_handler)
         
         # Start publisher

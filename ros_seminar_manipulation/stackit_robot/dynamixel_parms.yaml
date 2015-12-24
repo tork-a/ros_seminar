@@ -52,7 +52,7 @@ wrist_flex_controller:
 
 stackit_robot_controller:
     controller:
-        package: dynamixel_controllers
+        package: stackit_robot
         module: joint_trajectory_action_controller
         type: JointTrajectoryActionController
     joint_trajectory_action_node:
