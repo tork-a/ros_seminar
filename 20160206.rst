@@ -53,8 +53,6 @@
 
 Hironx 用コマンドライン設定の読込み
 ========================================
-% WARN: source rtshell-setup.sh will not required on oepnrtm_tools 1.2.9?
-%%$ source `rospack find openrtm_tools`/scripts/rtshell-setup.sh
 
 次に環境変数を ~/.bashrc ファイルへ追加します．これにより，ターミナルを起動する都度設定が自動的に読み込まれます．
 
@@ -63,11 +61,12 @@ Hironx 用コマンドライン設定の読込み
   echo “source ~/catkin_ws/devel/setup.bash” >> ~/.bashrc
   echo "source `rospack find openrtm_tools`/scripts/rtshell-setup.sh" >> ~/.bashrc
 
-講習中にロボットと ROS で接続することができるよう，ROS を立ち上げておき，このターミナルは起動したままにしておいて下さい．
+講習中にロボットと ROS で接続することができるよう，ROS を立ち上げておき，このターミナルは起動したままにしておいて下さい．`%HOSTNAME%` に，接続したい先のホスト名 (上で `/etc/hosts` に書き込んだ) を記載して下さい．
 
 ::
 
   $ roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=%HOSTNAME%
+
 
 注意：ロボットに動作指示を数分以上与えない時には，**off ポーズ／終了姿勢に戻す**などして安全な姿勢で servo がオフの状態にするよう，皆さんで気をつけ合いましょう．
 
