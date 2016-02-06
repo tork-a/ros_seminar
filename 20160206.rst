@@ -43,16 +43,16 @@ https://goo.gl/m0M2uE
 
 ::
 
-  $ sudo apt-get install python-catkin-tools python-rosdep python-wstool
-  $ source /opt/ros/indigo/setup.bash
-  $ mkdir -p ~/catkin_ws/src && cd ~/catkin_ws
-  $ wstool init src
-  $ wstool merge -t src https://raw.githubusercontent.com/tork-a/rtmros_nextage/indigo-devel/hironxo.rosinstall
-  $ wstool update -t src
-  $ git clone https://github.com/tork-a/ros_seminar.git && mv ros_seminar src
-  $ rosdep install --from-paths src --ignore-src -r -y
-  $ catkin build
-  $ source devel/setup.bash
+  sudo apt-get install python-catkin-tools python-rosdep python-wstool
+  source /opt/ros/indigo/setup.bash
+  mkdir -p ~/catkin_ws/src && cd ~/catkin_ws
+  wstool init src
+  wstool merge -t src https://raw.githubusercontent.com/tork-a/rtmros_nextage/indigo-devel/hironxo.rosinstall
+  wstool update -t src
+  git clone https://github.com/tork-a/ros_seminar.git && mv ros_seminar src
+  rosdep install --from-paths src --ignore-src -r -y
+  catkin build
+  source devel/setup.bash
 
 Hironx 用コマンドライン設定の読込み
 ========================================
@@ -74,7 +74,7 @@ Hironx 用コマンドライン設定の読込み
 
 ::
 
-  $ rtmlaunch hironx_ros_bridge hironx_ros_bridge_simulation.launch
+  rtmlaunch hironx_ros_bridge hironx_ros_bridge_simulation.launch
 
 チェック項目
 
@@ -88,7 +88,7 @@ Hironx 用コマンドライン設定の読込み
 
 ::
 
-  $ rtmlaunch hironx_ros_bridge hironx_ros_bridge_simulation.launch
+  rtmlaunch hironx_ros_bridge hironx_ros_bridge_simulation.launch
 
 性能が充分でなさそうな場合
 ================================================================
@@ -97,8 +97,8 @@ Hironx 用コマンドライン設定の読込み
 
 ::
 
-  $ rossetmaster %HOSTNAME%
-  $ rossetip
+  rossetmaster %HOSTNAME%
+  rossetip
 
 実機に接続
 ---------------------------
@@ -107,7 +107,9 @@ Hironx 用コマンドライン設定の読込み
 
 ::
 
-  $ roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=roboworks-1
+  roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=roboworks-1
+
+ipython -i `rospack find hironx_ros_bridge`/scripts/hironx.py 
 
 
 EOF
