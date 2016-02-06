@@ -109,7 +109,19 @@ Hironx 用コマンドライン設定の読込み
 
   roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=roboworks-1
 
-ipython -i `rospack find hironx_ros_bridge`/scripts/hironx.py 
+モニタプログラムの起動
+------------------------
 
+シミュレーションの場合
+
+::
+
+  ipython -i `rospack find hironx_ros_bridge`/scripts/hironx.py 
+
+実機の場合，ホスト名指定が必要です．
+
+::
+
+  ipython -i `rospack find hironx_ros_bridge`/scripts/hironx.py -- --host hiro
 
 EOF
