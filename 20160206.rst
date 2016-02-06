@@ -20,7 +20,8 @@ https://goo.gl/m0M2uE
 
 ::
 
-  $ gksudo gedit /etc/hosts &
+  $ sudo ls
+  $ sudo gedit /etc/hosts &
 
 ファイル最後尾に以下を追記:
 
