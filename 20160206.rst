@@ -61,13 +61,50 @@ Hironx 用コマンドライン設定の読込み
   echo “source ~/catkin_ws/devel/setup.bash” >> ~/.bashrc
   echo "source `rospack find openrtm_tools`/scripts/rtshell-setup.sh" >> ~/.bashrc
 
-講習中にロボットと ROS で接続することができるよう，ROS を立ち上げておき，このターミナルは起動したままにしておいて下さい．`%HOSTNAME%` に，接続したい先のホスト名 (上で `/etc/hosts` に書き込んだ) を記載して下さい．
+シミュレーションを起動
+---------------------------
+
+ご自身のマシンの性能等チェック
+================================================================
+
+性能が充分出ていそうか確認するため，以下コマンドを起動してみて下さい．
 
 ::
 
-  $ roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=%HOSTNAME%
+  $ rtmlaunch hironx_ros_bridge hironx_ros_bridge_simulation.launch
 
+チェック項目
+
+* 画面の大きさ充分か
+* ドラッグアンドドロップで反応が遅すぎない
+
+性能が充分そうな場合
+================================================================
+
+講習中にロボットと ROS で接続することができるよう，ROS を立ち上げておき，このターミナルは起動したままにしておいて下さい．
+
+::
+
+  $ rtmlaunch hironx_ros_bridge hironx_ros_bridge_simulation.launch
+
+性能が充分でなさそうな場合
+================================================================
+
+用意したデスクトップに繋ぐ．`%HOSTNAME%` に，接続したい先のホスト名 (上で `/etc/hosts` に書き込んだ) を記載して下さい．
+
+::
+
+  $ rossetmaster %HOSTNAME%
+  $ rossetip
+
+実機に接続
+---------------------------
 
 注意：ロボットに動作指示を数分以上与えない時には，**off ポーズ／終了姿勢に戻す**などして安全な姿勢で servo がオフの状態にするよう，皆さんで気をつけ合いましょう．
+
+::
+
+  $ roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=roboworks-1
+
 
 EOF
