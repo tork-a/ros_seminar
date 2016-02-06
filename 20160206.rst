@@ -1,0 +1,74 @@
+ワークショップ環境固有のネットワーク設定 02/06/2016
+
+.. contents:: Table of Contents
+   :depth: 2
+.. sectnum::
+
+ネットワーク設定
+----------------
+
+本日次の"3台"の `NEXTAGE Open` がそれぞれのホスト 名で起動しています.
+
+* roboworks-1 :実機
+* roboworks-SS01 :シミュレーション.プロジェクタ下のコンピュータ.
+* roboworks-SS02 :シミュレーション.後方のコンピュータ.
+
+これらにホスト名逆引き設定を OS に書き込みます.
+
+::
+
+  $ gksudo gedit /etc/hosts &
+
+ファイル最後尾に以下を追記:
+
+::
+
+  192.168.130.20 roboworks-1
+  192.168.130.22 roboworks-SS01
+  192.168.130.21 roboworks-SS02
+
+ホスト名で通信できることを確認しましょう.
+
+::
+
+  $ ping roboworks-1
+  $ ping roboworks-SS01
+  $ ping roboworks-SS02
+
+インストール
+----------------
+
+::
+
+  $ sudo apt-get install python-catkin-tools python-rosdep python-wstool
+  $ source /opt/ros/indigo/setup.bash
+  $ mkdir -p ~/catkin_ws/src && cd ~/catkin_ws
+  $ wstool init src
+  $ wstool merge -t src https://raw.githubusercontent.com/tork-a/rtmros_nextage/indigo-devel/hironxo.rosinstall
+  $ wstool update -t src
+  $ git clone https://github.com/tork-a/ros_seminar.git && mv ros_seminar src
+  $ rosdep install --from-paths src --ignore-src -r -y
+  $ catkin build
+  $ source devel/setup.bash
+
+Hironx 用コマンドライン設定の読込み
+========================================
+% WARN: source rtshell-setup.sh will not required on oepnrtm_tools 1.2.9?
+%%$ source `rospack find openrtm_tools`/scripts/rtshell-setup.sh
+
+次に環境変数を ~/.bashrc ファイルへ追加します．これにより，ターミナルを起動する都度設定が自動的に読み込まれます．
+
+::
+
+  echo “source ~/catkin_ws/devel/setup.bash” >> ~/.bashrc
+  echo "source `rospack find openrtm_tools`/scripts/rtshell-setup.sh" >> ~/.bashrc
+
+講習中にロボットと ROS で接続することができるよう，ROS を立ち上げておき，このターミナルは起動したままにしておいて下さい．
+
+::
+
+  $ roslaunch hironx_ros_bridge hironx_ros_bridge_real.launch nameserver:=%HOSTNAME%
+
+注意：ロボットに動作指示を数分以上与えない時には，**off ポーズ／終了姿勢に戻す**などして安全な姿勢で servo がオフの状態にするよう，皆さんで気をつけ合いましょう．
+
+EOF
