@@ -2,8 +2,8 @@
 Changelog for package stackit_robot_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2016-05-29)
+------------------
 * update all packge version to 1.0.1
 * Contributors: Tokyo Opensource Robotics Programmer 534o
 

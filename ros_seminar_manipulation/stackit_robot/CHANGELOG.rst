@@ -2,8 +2,8 @@
 Changelog for package stackit_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2016-05-29)
+------------------
 * update all packge version to 1.0.1
 * stackit_robot_joint_state_publisher.py: joint_states need joint name, not controller name
 * use joint_trajectory_action_controller with https://github.com/arebgun/dynamixel_motor/issues/33
