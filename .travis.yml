@@ -54,6 +54,7 @@ script:
   - catkin build -p1 -j1
   - catkin run_tests -p1 -j1
   - catkin_test_results --all build
+  - catkin_test_results --verbose build
   - catkin clean --yes
   - catkin config --install
   - catkin build -p1 -j1
