@@ -2,6 +2,11 @@
 Changelog for package stackit_robot_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add roslaunch_add_file_check to ros_seminar_manipulation
+* Contributors: Tokyo Opensource Robotics Programmer 534o
+
 1.0.2 (2016-05-29)
 ------------------
 

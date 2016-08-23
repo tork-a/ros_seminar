@@ -2,6 +2,11 @@
 Changelog for package hironx_tutorial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix wrong CHANGELOG at hironx_tutorial
+* Contributors: Tokyo Opensource Robotics Programmer 534o
+
 1.0.2 (2016-05-29)
 ------------------
 * Add more sample scripts (https://github.com/tork-a/hironx_tutorial/pull/10).

@@ -2,6 +2,13 @@
 Changelog for package stackit_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* stackit_robot: add test/test_calibration.launch
+* ros_seminar_manipulation : add run_denepds
+* add roslaunch_add_file_check to ros_seminar_manipulation
+* Contributors: Tokyo Opensource Robotics Programmer 534o
+
 1.0.2 (2016-05-29)
 ------------------
 * update all packge version to 1.0.1
