@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="leap_motion" type="sender.py" name="sender" />
+</launch>

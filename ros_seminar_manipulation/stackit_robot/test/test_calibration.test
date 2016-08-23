@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="camera_calibration" name="cameracalibrator" type="cameracalibrator.py" />
+</launch>

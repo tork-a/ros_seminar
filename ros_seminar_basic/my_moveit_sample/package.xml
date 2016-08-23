@@ -9,7 +9,15 @@
   <license>LGPL</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>moveit_commander</build_depend>
+
+  <run_depend>denso_launch</run_depend>
+  <run_depend>vs060</run_depend>
+  <run_depend>vs060_moveit_config</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>pr2_controller_manager</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>robot_self_filter</run_depend>
+  <run_depend>openni_launch</run_depend>
   <run_depend>moveit_commander</run_depend>
   <run_depend>rospy</run_depend>
 

@@ -2,11 +2,17 @@ sudo: required
 dist: trusty
 language: generic
 env:
-  - ROS_DISTRO=indigo
-  - ROS_DISTRO=jade
+  - SEMINAR=ros_seminar_basic         ROS_DISTRO=indigo
+  - SEMINAR=ros_seminar_manipulation  ROS_DISTRO=indigo
+  - SEMINAR=rosseminar_hironxo        ROS_DISTRO=indigo
+  - SEMINAR=ros_seminar_basic         ROS_DISTRO=jade
+  - SEMINAR=ros_seminar_manipulation  ROS_DISTRO=jade
+  - SEMINAR=rosseminar_hironxo        ROS_DISTRO=jade
 matrix:
   allow_failures:
-    - env: ROS_DISTRO=jade
+    - env: SEMINAR=ros_seminar_basic         ROS_DISTRO=jade
+    - env: SEMINAR=ros_seminar_manipulation  ROS_DISTRO=jade
+    - env: SEMINAR=rosseminar_hironxo        ROS_DISTRO=jade
 # Install system dependencies, namely ROS.
 before_install:
   # Define some config vars.
@@ -31,7 +37,7 @@ install:
 
   # Add the package under test to the workspace.
   - cd ~/catkin_ws/src
-  - ln -s $CI_SOURCE_PATH . # Link the repo we are testing to the new workspace
+  - ln -s $CI_SOURCE_PATH/$SEMINAR . # Link the repo we are testing to the new workspace
 
 # Install all dependencies, using wstool and rosdep.
 # wstool looks for a ROSINSTALL_FILE defined in before_install.
@@ -46,14 +52,18 @@ before_script:
   # package depdencies: install using rosdep.
   - cd ~/catkin_ws
   - rosdep install -y -q -r --from-paths src --ignore-src --rosdistro $ROS_DISTRO
-
 # Compile and test.
 script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
+  # BEGIN - workaround for missing vs060-test.l
+  - rospack find denso_launch && (sudo touch `rospack find denso_launch`/vs060-test.l; sudo chmod a+x `rospack find denso_launch`/vs060-test.l) ; echo "ok"
+  - rospack find denso_launch && sudo sed -i 's@gdb-launch-prefix@launch-prefix@' `rospack find denso_launch`/launch/denso_vs060_startup_skelton.launch; echo "ok"
+  # END - workaround for missing vs060-test.l
   - cd ~/catkin_ws
   - catkin build -p1 -j1
   - catkin run_tests -p1 -j1
   - catkin_test_results --all build
+  - catkin_test_results --verbose build
   - catkin clean --yes
   - catkin config --install
   - catkin build -p1 -j1
