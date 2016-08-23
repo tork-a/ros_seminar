@@ -2,8 +2,8 @@
 Changelog for package stackit_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2016-08-23)
+------------------
 * stackit_robot: add test/test_calibration.launch
 * ros_seminar_manipulation : add run_denepds
 * add roslaunch_add_file_check to ros_seminar_manipulation

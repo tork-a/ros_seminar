@@ -2,8 +2,8 @@
 Changelog for package hironx_tutorial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2016-08-23)
+------------------
 * fix wrong CHANGELOG at hironx_tutorial
 * Contributors: Tokyo Opensource Robotics Programmer 534o
 
