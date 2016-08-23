@@ -2,11 +2,17 @@ sudo: required
 dist: trusty
 language: generic
 env:
-  - ROS_DISTRO=indigo
-  - ROS_DISTRO=jade
+  - SEMINAR=ros_seminar_basic         ROS_DISTRO=indigo
+  - SEMINAR=ros_seminar_manipulation  ROS_DISTRO=indigo
+  - SEMINAR=rosseminar_hironxo        ROS_DISTRO=indigo
+  - SEMINAR=ros_seminar_basic         ROS_DISTRO=jade
+  - SEMINAR=ros_seminar_manipulation  ROS_DISTRO=jade
+  - SEMINAR=rosseminar_hironxo        ROS_DISTRO=jade
 matrix:
   allow_failures:
-    - env: ROS_DISTRO=jade
+    - env: SEMINAR=ros_seminar_basic         ROS_DISTRO=jade
+    - env: SEMINAR=ros_seminar_manipulation  ROS_DISTRO=jade
+    - env: SEMINAR=rosseminar_hironxo        ROS_DISTRO=jade
 # Install system dependencies, namely ROS.
 before_install:
   # Define some config vars.
@@ -31,7 +37,7 @@ install:
 
   # Add the package under test to the workspace.
   - cd ~/catkin_ws/src
-  - ln -s $CI_SOURCE_PATH . # Link the repo we are testing to the new workspace
+  - ln -s $CI_SOURCE_PATH/$SEMINAR . # Link the repo we are testing to the new workspace
 
 # Install all dependencies, using wstool and rosdep.
 # wstool looks for a ROSINSTALL_FILE defined in before_install.
