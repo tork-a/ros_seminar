@@ -12,8 +12,10 @@ catkin_package()
 ## Install ##
 #############
 
-install(PROGRAMS send_vel_with_test.py send_goal_message.py send_goal_actionlib.py)
-install(FILES recognizer.launch)
+install(DIRECTORY script launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  USE_SOURCE_PERMISSIONS
+)
 
 #############
 ## Testing ##
