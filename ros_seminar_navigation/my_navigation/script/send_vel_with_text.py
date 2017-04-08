@@ -8,7 +8,7 @@ class Sender:
     def __init__(self):
         self.msg = Twist()
         self.pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
-        rospy.Subscriber('recognizer/output', String, self.callback)
+        rospy.Subscriber('text', String, self.callback)
 
         rate = rospy.Rate(10.0)
         while not rospy.is_shutdown():
