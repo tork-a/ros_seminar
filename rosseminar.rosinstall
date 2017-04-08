@@ -2,3 +2,7 @@
     local-name: ros_seminar
     uri: https://github.com/tork-a/ros_seminar.git
     version: master
+- git:
+    local-name: roomblock
+    uri: https://github.com/tork-a/roomblock.git
+    version: master
