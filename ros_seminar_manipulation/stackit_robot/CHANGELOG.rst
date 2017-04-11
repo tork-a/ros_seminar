@@ -2,6 +2,11 @@
 Changelog for package stackit_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update marker_detect for ar_track_alvar 0.5.4
+* Contributors: Tokyo Opensource Robotics Developer 534
+
 1.0.3 (2016-08-23)
 ------------------
 * stackit_robot: add test/test_calibration.launch

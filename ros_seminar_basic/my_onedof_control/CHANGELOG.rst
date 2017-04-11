@@ -2,6 +2,9 @@
 Changelog for package my_onedof_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.3 (2016-08-23)
 ------------------
 * ros_seminar_basic : add run_denepds

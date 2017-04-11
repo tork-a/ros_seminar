@@ -2,6 +2,9 @@
 Changelog for package stackit_robot_ikfast_whole_arm_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.3 (2016-08-23)
 ------------------
 * add roslaunch_add_file_check to ros_seminar_manipulation

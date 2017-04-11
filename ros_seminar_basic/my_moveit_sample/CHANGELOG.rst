@@ -2,6 +2,9 @@
 Changelog for package my_moveit_sample
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.3 (2016-08-23)
 ------------------
 * my_moveit_sample/test/test_moveit_sample.test : expand launch files to avoid error
