@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>my_moveit_sample</name>
-  <version>1.0.3</version>
+  <version>1.1.0</version>
   <description>The my_moveit_sample package</description>
 
   <maintainer email="dev@opensource-robotics.tokyo.jp">TORK</maintainer>

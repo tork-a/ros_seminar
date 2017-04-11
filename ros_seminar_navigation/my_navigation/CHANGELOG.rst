@@ -2,8 +2,8 @@
 Changelog for package my_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2017-04-11)
+------------------
 * Add navigation part of workshop
 * Contributors: Tokyo Opensource Robotics Developer 7675, Tokyo Opensource Robotics Developer 534
 

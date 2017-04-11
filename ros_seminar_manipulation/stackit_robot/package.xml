@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>stackit_robot</name>
-  <version>1.0.3</version>
+  <version>1.1.0</version>
   <description>The stackit_robot package</description>
 
   <maintainer email="dev@opensource-robotics.tokyo.jp">TORK</maintainer>

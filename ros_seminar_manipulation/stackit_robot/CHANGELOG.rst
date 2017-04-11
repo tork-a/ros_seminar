@@ -2,8 +2,8 @@
 Changelog for package stackit_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2017-04-11)
+------------------
 * update marker_detect for ar_track_alvar 0.5.4
 * Contributors: Tokyo Opensource Robotics Developer 534
 
