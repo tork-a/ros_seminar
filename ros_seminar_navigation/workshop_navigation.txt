@@ -1,0 +1,118 @@
+==========================================
+workshop-navigation commands 2017/06/14
+==========================================
+
+==========================================
+1-4. ROS ワークスペースの作成
+==========================================
+
+apt-get update
+
+apt-get install python-wstool
+
+mkdir ~/catkin_ws
+
+cd ~/catkin_ws
+
+wstool init src
+
+wstool merge -t src https://raw.githubusercontent.com/tork-a/ros_seminar/master/rosseminar.rosinstall
+
+wstool update -t src
+
+rosdep install -y -r --from-paths src --ignore-src
+
+cd ~/catkin_ws
+
+catkin_make
+
+source ~/catkin_ws/devel/setup.bash 
+
+echo "### For ROS seminar" >> ~/.bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+==========================================
+2-1. デモプログラムの実行
+==========================================
+
+roslaunch navigation_stage move_base_amcl_2.5cm.launch
+
+==========================================
+2-2. 速度指令によるロボットの操作
+==========================================
+
+sudo apt-get install ros-indigo-teleop-twist-keyboard
+
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+sudo apt-get install ros-indigo-teleop-twist-joy
+
+roslaunch teleop_twist_joy teleop.launch joy_config:=xbox
+
+==========================================
+2-4. プログラムからの速度指令
+==========================================
+
+rostopic info /cmd_vel
+
+rostopic echo /cmd_vel
+
+rosrun my_navigation send_vel_with_text.py
+
+rostopic pub /text std_msgs/String forward
+
+roslaunch my_navigation recognizer.launch
+
+==========================================
+3-2. システムの起動
+==========================================
+
+ssh -Y ubuntu@ubuntu
+
+roslaunch roomblock_bringup roomblock.launch
+
+export ROS_MASTER_URI=http://ubuntu:11311
+
+export ROS_MASTER_URI=http://192.168.1.20:11311
+export ROS_IP=192.168.1.10
+
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_IP=192.168.1.20
+
+roslaunch roomblock teleop_joy.launch
+
+==========================================
+3-3. 地図生成
+==========================================
+
+roslaunch roomblock_mapping gmapping.launch launch_rviz:=true
+
+rosrun map_server map_saver
+
+mv map.pgm map.yaml ~/.ros/ 
+
+==========================================
+3-4. 自律移動
+==========================================
+
+roslaunch roomblock_navigation amcl.launch map_file:=map.yaml
+
+==========================================
+4.2 ロボット
+==========================================
+
+rosmsg show geometry_msgs/Twist
+
+rosmsg show ackermann_msgs/AckermannDrive
+
+rosmsg show nav_msgs/Odometry 
+
+rosmsg show sensor_msgs/LaserScan 
+
+rosmsg show sensor_msgs/PointCloud2 
+
+rosmsg show sensor_msgs/Image 
+
+rosmsg show sensor_msgs/NavSatFix 
+
+rosmsg show sensor_msgs/NavSatStatus 
