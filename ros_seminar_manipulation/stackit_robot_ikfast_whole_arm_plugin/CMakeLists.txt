@@ -27,6 +27,9 @@ find_package(LAPACK REQUIRED)
 
 add_library(${IKFAST_LIBRARY_NAME} src/stackit_robot_whole_arm_ikfast_moveit_plugin.cpp)
 target_link_libraries(${IKFAST_LIBRARY_NAME} ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${LAPACK_LIBRARIES})
+if ($ENV{ROS_DISTRO} STRGREATER "indigo")
+  target_compile_features(${IKFAST_LIBRARY_NAME} PRIVATE cxx_range_for)
+endif()
 
 install(TARGETS ${IKFAST_LIBRARY_NAME} LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
 
