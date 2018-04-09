@@ -1,0 +1,3 @@
+# UVC cameras
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0c45", MODE="0666"
