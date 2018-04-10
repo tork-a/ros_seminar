@@ -5,7 +5,6 @@ project(my_moveit_sample)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  moveit_commander
 )
 
 ## System dependencies are found with CMake's conventions
@@ -161,10 +160,10 @@ include_directories(
 # catkin_add_nosetests(test)
 
 ## test
-if(CATKIN_ENABLE_TESTING)
-  find_package(catkin REQUIRED COMPONENTS rostest roslaunch)
-  file(GLOB LAUNCH_FILES launch/*.launch test/*.test)
-  foreach(LAUNCH_FILE ${LAUNCH_FILES})
-    roslaunch_add_file_check(${LAUNCH_FILE})
-  endforeach()
-endif()
+# if(CATKIN_ENABLE_TESTING)
+#   find_package(catkin REQUIRED COMPONENTS rostest roslaunch)
+#   file(GLOB LAUNCH_FILES launch/*.launch test/*.test)
+#   foreach(LAUNCH_FILE ${LAUNCH_FILES})
+#     roslaunch_add_file_check(${LAUNCH_FILE})
+#   endforeach()
+# endif()
