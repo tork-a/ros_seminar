@@ -24,6 +24,7 @@
   <run_depend>dynamixel_controllers</run_depend>
   <run_depend>leap_motion</run_depend>
 
+  <build_depend>dynamixel_controllers</build_depend>
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- You can specify that this package is a metapackage here: -->
