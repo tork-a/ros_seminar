@@ -17,7 +17,7 @@
   <run_depend>std_msgs</run_depend>
   <run_depend>teleop_twist_joy</run_depend>
   <run_depend>teleop_twist_keyboard</run_depend>
-  <run_depend>pocketsphinx</run_depend>
+  <run_depend>jsk_gui_msgs</run_depend>
 
   <test_depend>rostest</test_depend>
   <test_depend>roslaunch</test_depend>
