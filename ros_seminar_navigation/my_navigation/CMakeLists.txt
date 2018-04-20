@@ -12,7 +12,7 @@ catkin_package()
 ## Install ##
 #############
 
-install(DIRECTORY script launch
+install(DIRECTORY script
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   USE_SOURCE_PERMISSIONS
 )
