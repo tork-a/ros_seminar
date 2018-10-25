@@ -37,7 +37,7 @@ def move_arm(target_position):
         sys.exit()
     group.go()
     #group.execute(plan)
-    #time.sleep(5)
+    time.sleep(1)
 
 
 def set_slope(sl):
